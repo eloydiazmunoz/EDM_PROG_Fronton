@@ -5,7 +5,6 @@
 using namespace sf;
 using namespace std;
 
-
 int main() {
 
     // Finestra
@@ -30,6 +29,8 @@ int main() {
 
     Clock cronometre;
     bool fijoc = false;
+
+    // Bucle principal del joc
     while (window.isOpen() && !fijoc) {
         // Actualitzem l'entrada
         Event event;
@@ -43,11 +44,11 @@ int main() {
         float dt = cronometre.restart().asSeconds();
         EntradaJugador(window, player, dt);
 
-        // Actualitzem el joc
-        fijoc = Update(dt, bola, player, ballSpeedX, ballSpeedY, bloques,puntuacio,temps,Rellotje);
+        // Actualitzem l'estat del joc
+        fijoc = Update(dt, bola, player, ballSpeedX, ballSpeedY, bloques, puntuacio, temps, Rellotje);
 
-        // Dibuixem el joc
-        Draw(window, bola, player, bloques, puntuacio,temps);
+        // Dibuixem l'estat actual del joc
+        Draw(window, bola, player, bloques, puntuacio, temps);
     }
 
     return 0;

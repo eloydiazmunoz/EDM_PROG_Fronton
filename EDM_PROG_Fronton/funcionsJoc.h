@@ -1,8 +1,9 @@
-//prototips
+// Prototips de les funcions
 #include <iostream>
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+// Constants del joc
 const std::string title = "Fronton";
 const float ballSpeedBase = 7.0f;
 const float playerSpeed = 9.0f;
@@ -15,6 +16,8 @@ const int ampleBloc = 60;
 const int alcadaBloc = 20;
 const int espaiEntreBloques = 20;
 const int numBloquesFilas = 5;
+
+// Estructura del bloc
 struct Bloque {
     sf::RectangleShape shape;
     bool activo;
@@ -22,7 +25,9 @@ struct Bloque {
     Bloque(sf::Vector2f size) : shape(size), activo(true) {
     }
 };
-bool Update(float dt, CircleShape& bola, RectangleShape& player, float& ballSpeedX, float& ballSpeedY, std::vector<Bloque>& blocs, int& punt, int& temps,Clock Rellotje);
+
+// Prototips de les funcions
+bool Update(float dt, CircleShape& bola, RectangleShape& player, float& ballSpeedX, float& ballSpeedY, std::vector<Bloque>& blocs, int& punt, int& temps, Clock Rellotje);
 void Draw(RenderWindow& finestre, CircleShape& bola, RectangleShape& player, std::vector<Bloque>& blocs, int punt, int temps);
 void crearmon(CircleShape& bola, RectangleShape& player);
 void EntradaJugador(RenderWindow& finestre, RectangleShape& jugador, float dt);
